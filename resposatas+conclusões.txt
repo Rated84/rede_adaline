@@ -15,3 +15,21 @@ tornando a superfície de erro aproximadamente esférica e garantindo que o grad
 coerente. O que pode resultar em um sistema dando retorno good, permitindo a falha perpetuar, pois, o operador vai assumir que
 está havendo comunicação sendo que o canal está comprometido.
 Um falso positivo nesse caso geraria uma maior cautela na situação ocorrida. 
+
+Conclusões do modelo:
+O modelo teve um bom desempenho na parametrização, com uma acurácia
+razoável de 0.9577, ou seja, ele mais acerta do que erra. Boa precisão e alto recall pois ele
+não teve um falso negativo, porém teve falsos positivos o que gera um alerta desnecessário
+mas para o contexto não seria algo crítico, pois falsos negativos seriam piores pois o
+mesmo diria que estava havendo transmissão sem o está levando a falsa confiança, já
+falsos negativos apenas gera uma verificação, um alerta que é desnecessário.
+O F1 score apesar do alto recall teve uma precisão próxima o que leva a entender
+que tal valor demonstra desempenho bom do modelo, mostrando que sempre que tem uma
+estrutura o modelo identifica a mesma, evitando perda de comunicação ou prejudicando a
+análise científica.
+Como ele não faz falsas falsos negativos, em uma situação como tempestades
+geomagnéticas, não passaria despercebido, o modelo atende a seu propósito.
+Faz a escolha do Eta pegando o que gera o menor erro no final, porém isso revela
+outra coisa do modelo, o mesmo apenas ver o último ponto da curva não sua trajetória, o
+que pode acarretar em um eta terminar rápido e não convergir e outro ir lento mas terminar
+melhor, ou seja, escolher um eta que não é bom.
